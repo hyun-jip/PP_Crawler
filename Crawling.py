@@ -7,8 +7,6 @@ from selenium.webdriver.common.action_chains import ActionChains
 def select_date(START_YEAR, END_YEAR, START_MONTH, END_MONTH):
   DATE_LIST = []
   for i in range(END_YEAR-START_YEAR+1):
-    if((START_YEAR==END_YEAR) and (START_MONTH > END_MONTH)):
-      break  
     for j in range(12):
         DATE_LIST.append([START_YEAR,START_MONTH])
         START_MONTH = START_MONTH+1
@@ -20,8 +18,6 @@ def select_date(START_YEAR, END_YEAR, START_MONTH, END_MONTH):
             break
     if((START_YEAR==END_YEAR) and (START_MONTH==END_MONTH+1)):
             break
-  if(DATE_LIST==[]):
-      print("날짜 선택을 다시해주세요.")
   return DATE_LIST
 
 
